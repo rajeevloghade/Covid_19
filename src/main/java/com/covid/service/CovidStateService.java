@@ -6,8 +6,6 @@ import com.covid.model.State;
 
 public interface CovidStateService {
 
-	int getAllCountStateCases();
-
 	List<State> getAllStateCases();
 
 	State saveStateCase(State state);

@@ -1,3 +1,4 @@
+<%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@page isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstl"%>
 
@@ -34,6 +35,18 @@
 			</tr>
 		</jstl:forEach>
 	</table>
+	<br>
+	<%
+		int pageNumber = (Integer) request.getAttribute("pageNumber");
+	int increase = 0;
+	for (int i = 1; i <= pageNumber; i++) {
+	%>
+	<a href="paginationOfState?startPage=<%=increase%>&itemPerPage=5"><%=i%></a>
+	<%
+		System.out.println("increase:" + increase);
+	increase = increase + 6;
+	}
+	%>
 	<hr>
 	<br>
 	<a href="index.jsp">Home</a>

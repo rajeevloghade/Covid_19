@@ -12,7 +12,7 @@ public interface CovidCityService {
 
 	City updateCityCase(City city);
 
-	City deleteCityById(String id);
+	void deleteCityById(String id);
 
 	City searchCityByName(String id);
 

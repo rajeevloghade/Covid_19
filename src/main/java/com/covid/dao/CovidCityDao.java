@@ -6,7 +6,7 @@ import com.covid.model.City;
 
 public interface CovidCityDao {
 
-	City deleteCityById(String id);
+	void deleteCityById(String id);
 
 	List<City> getAllCases();
 	

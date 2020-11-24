@@ -292,11 +292,10 @@ public class CovidAdminControllerImpl implements CovidCityController, CovidState
 	@RequestMapping("cityDelete")
 	public ModelAndView deleteCityById(@RequestParam("code") String id) {
 		// passing id to search for course
-		City city = covidCityService.deleteCityById(id);
+		covidCityService.deleteCityById(id);
 
 		// return the view name
 		ModelAndView view = new ModelAndView("redirect:getAllCases");
-		view.addObject("cityObj", city);
 		return view;
 	}
 

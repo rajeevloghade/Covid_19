@@ -34,8 +34,8 @@ public class CovidCityServiceImpl implements CovidCityService {
 		return covidCityDao.saveCase(cityUpdate);
 	}
 
-	public City deleteCityById(String id) {
-		return covidCityDao.deleteCityById(id);
+	public void deleteCityById(String id) {
+		 covidCityDao.deleteCityById(id);
 	}
 
 	public City searchCityByName(String id) {

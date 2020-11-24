@@ -33,6 +33,17 @@
 			</tr>
 		</jstl:forEach>
 	</table>
+	<br>
+	<%
+		int pageNumber = (Integer) request.getAttribute("pageNumber");
+	int increase = 0;
+	for (int i = 1; i <= pageNumber; i++) {
+	%>
+	<a href="paginationOfDistrict?startPage=<%=increase%>&itemPerPage=5"><%=i%></a>
+	<%
+		increase += 6;
+	}
+	%>
 	<hr>
 	<a href="paginationOfState?startPage=0&itemPerPage=5">State Wise</a>
 	<br>

@@ -19,10 +19,6 @@ public class CovidStateServiceImpl implements CovidStateService {
 		return covidStateDao.getAllCases();
 	}
 
-	public int getAllCountStateCases() {
-		return covidStateDao.getAllCases().size();
-	}
-
 	public State saveStateCase(State state) {
 		State stateInsert = new State();
 		stateInsert.setCode(state.getCode());

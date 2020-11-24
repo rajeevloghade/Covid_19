@@ -36,14 +36,14 @@ public class CovidCityDaoImpl implements CovidCityDao {
 		return city;
 	}
 
-	public City deleteCityById(String id) {
+	public void deleteCityById(String id) {
 		Session session = sessionFactory.openSession();
 		Transaction beginTransaction = session.beginTransaction();
 		City city = session.get(City.class, id);
+		System.out.println(city);
 		session.delete(city);
 		beginTransaction.commit();
 		session.close();
-		return city;
 	}
 
 	public List<City> getAllCases() {
@@ -94,7 +94,7 @@ public class CovidCityDaoImpl implements CovidCityDao {
 		return list;
 	}
 
-	public List<City> getAllCityByStateId(String stateId,int startPage, int itemPerPage) {
+	public List<City> getAllCityByStateId(String stateId, int startPage, int itemPerPage) {
 		Session session = sessionFactory.openSession();
 		Criterion eqProperty = Restrictions.eq("state", new State(stateId));
 		Criteria createCriteria = session.createCriteria(City.class);
@@ -106,7 +106,7 @@ public class CovidCityDaoImpl implements CovidCityDao {
 		return cities;
 	}
 
-	public List<City> getAllCityByDistrictId(String districtId,int startPage, int itemPerPage) {
+	public List<City> getAllCityByDistrictId(String districtId, int startPage, int itemPerPage) {
 		Session session = sessionFactory.openSession();
 		Criterion eqProperty = Restrictions.eq("district", new District(districtId));
 		Criteria createCriteria = session.createCriteria(City.class);
