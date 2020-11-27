@@ -13,7 +13,8 @@
 			href="getAllStateCases">View All State Info</a><br> <a
 			href="insertStatePage">Insert New State Data</a><br> <a
 			href="insertDistrictPage">Insert New District Data</a><br> <a
-			href="insertCityPage">Insert New City Data</a><br> <a href="logout">Logout</a><br>
+			href="insertCityPage">Insert New City Data</a><br> <a
+			href="logout">Logout</a><br>
 		<hr>
 	</h3>
 </body>

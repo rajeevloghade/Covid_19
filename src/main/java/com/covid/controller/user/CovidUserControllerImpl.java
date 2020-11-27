@@ -51,8 +51,8 @@ public class CovidUserControllerImpl
 	@RequestMapping("paginationOfState")
 	public ModelAndView paginationOfState(@RequestParam("startPage") int startPage,
 			@RequestParam("itemPerPage") int itemPerPage) {
-		int availableCities = covidCityService.getAllCityCasesForUser().size();
-		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
+		int availableStates = covidStateService.getAllStateCases().size();
+		int pageNumber = (int) Math.ceil(availableStates / itemPerPage);
 		List<State> states = covidStateService.paginationOfState(startPage, itemPerPage);
 		ModelAndView view = new ModelAndView("User/JSTLStatesResultForUser");
 		view.addObject("pageNumber", pageNumber);
@@ -84,8 +84,11 @@ public class CovidUserControllerImpl
 	@RequestMapping("getAllDistrictByStateIdForUser")
 	public ModelAndView getAllDistrictByStateIdForUser(@RequestParam("stateid_fk") String stateId, int startPage,
 			int itemPerPage) {
+		int availableCities = covidDistrictService.getAllDistrictCasesForUser().size();
+		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
 		List<District> districts = covidDistrictService.getAllDistrictByStateId(stateId, startPage, itemPerPage);
 		ModelAndView view = new ModelAndView("User/JSTLDistrictResultForUser");
+		view.addObject("pageNumber", pageNumber);
 		view.addObject("districts", districts);
 		return view;
 	}
@@ -93,8 +96,8 @@ public class CovidUserControllerImpl
 	@RequestMapping("paginationOfDistrict")
 	public ModelAndView paginationOfDistrict(@RequestParam("startPage") int startPage,
 			@RequestParam("itemPerPage") int itemPerPage) {
-		int availableCities = covidCityService.getAllCityCasesForUser().size();
-		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
+		int availableDistricts = covidDistrictService.getAllDistrictCasesForUser().size();
+		int pageNumber = (int) Math.ceil(availableDistricts / itemPerPage);
 		List<District> districts = covidDistrictService.paginationOfDistrict(startPage, itemPerPage);
 		ModelAndView view = new ModelAndView("User/JSTLDistrictResultForUser");
 		view.addObject("pageNumber", pageNumber);
@@ -117,8 +120,11 @@ public class CovidUserControllerImpl
 	@RequestMapping("getAllCityByDistrictIdForUser")
 	public ModelAndView getAllCityByDistrictIdForUser(@RequestParam("districtid_fk") String districtId, int startPage,
 			int itemPerPage) {
+		int availableCities = covidCityService.getAllCityCasesForUser().size();
+		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
 		List<City> cities = covidCityService.getAllCityByDistrictId(districtId, startPage, itemPerPage);
 		ModelAndView view = new ModelAndView("User/JSTLCityResultForUser");
+		view.addObject("pageNumber", pageNumber);
 		view.addObject("cities", cities);
 		return view;
 	}
@@ -126,8 +132,11 @@ public class CovidUserControllerImpl
 	@RequestMapping("getAllCityByStateIdForUser")
 	public ModelAndView getAllCityByStateIdForUser(@RequestParam("stateid_fk") String stateId, int startPage,
 			int itemPerPage) {
+		int availableCities = covidCityService.getAllCityCasesForUser().size();
+		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
 		List<City> cities = covidCityService.getAllCityByStateId(stateId, startPage, itemPerPage);
 		ModelAndView view = new ModelAndView("User/JSTLCityResultForUser");
+		view.addObject("pageNumber", pageNumber);
 		view.addObject("cities", cities);
 		return view;
 	}

@@ -20,6 +20,7 @@ import com.covid.dao.CovidCityDao;
 import com.covid.model.City;
 import com.covid.model.District;
 import com.covid.model.State;
+import com.mchange.v2.async.StrandedTaskReporting;
 
 @Repository("CovidCityDaoImpl")
 public class CovidCityDaoImpl implements CovidCityDao {
@@ -111,6 +112,8 @@ public class CovidCityDaoImpl implements CovidCityDao {
 		Criterion eqProperty = Restrictions.eq("district", new District(districtId));
 		Criteria createCriteria = session.createCriteria(City.class);
 		createCriteria.add(eqProperty);
+		createCriteria.setFirstResult(startPage);// setting limit from
+		createCriteria.setMaxResults(itemPerPage);// items per page
 		List<City> cities = createCriteria.addOrder(Order.desc("totalActiveCase")).list();
 		session.close();
 		return cities;

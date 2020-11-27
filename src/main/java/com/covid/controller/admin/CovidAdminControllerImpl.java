@@ -224,7 +224,8 @@ public class CovidAdminControllerImpl implements CovidCityController, CovidState
 
 	@RequestMapping("getAllDistrictByStateId")
 	public ModelAndView getAllDistrictByStateId(@RequestParam("stateid_fk") String stateId,
-			@RequestParam("startPage") int startPage, @RequestParam("itemPerPage") int itemPerPage) {
+			@RequestParam(name = "startPage", required = false, defaultValue = "0") int startPage,
+			@RequestParam(name = "itemPerPage", required = false, defaultValue = "1000") int itemPerPage) {
 		// read the data coming from request
 
 		// passing name to search for course
@@ -314,7 +315,8 @@ public class CovidAdminControllerImpl implements CovidCityController, CovidState
 
 	@RequestMapping("getAllCityByStateId")
 	public ModelAndView getAllCityByStateId(@RequestParam("stateid_fk") String stateId,
-			@RequestParam("startPage") int startPage, @RequestParam("itemPerPage") int itemPerPage) {
+			@RequestParam(name = "startPage", required = false, defaultValue = "0") int startPage,
+			@RequestParam(name = "itemPerPage", required = false, defaultValue = "1000") int itemPerPage) {
 		List<City> cities = covidCityService.getAllCityByStateId(stateId, startPage, itemPerPage);
 		ModelAndView view = new ModelAndView("JSTLCasesResult");
 		view.addObject("cities", cities);
@@ -323,7 +325,8 @@ public class CovidAdminControllerImpl implements CovidCityController, CovidState
 
 	@RequestMapping("getAllCityByDistrictId")
 	public ModelAndView getAllCityByDistrictId(@RequestParam("districtid_fk") String districtId,
-			@RequestParam("startPage") int startPage, @RequestParam("itemPerPage") int itemPerPage) {
+			@RequestParam(name = "startPage", required = false, defaultValue = "0") int startPage,
+			@RequestParam(name = "itemPerPage", required = false, defaultValue = "1000") int itemPerPage) {
 		List<City> cities = covidCityService.getAllCityByDistrictId(districtId, startPage, itemPerPage);
 		ModelAndView view = new ModelAndView("JSTLCasesResult");
 		view.addObject("cities", cities);

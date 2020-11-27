@@ -25,4 +25,8 @@ public interface CovidCityController {
 
 	ModelAndView getAllCases(HttpServletRequest request);
 
+	ModelAndView getAllCityByDistrictId(String districtId, int startPage, int itemPerPage);
+
+	ModelAndView getAllCityByStateId(String stateId, int startPage, int itemPerPage);
+
 }

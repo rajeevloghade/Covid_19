@@ -4,51 +4,77 @@
 <html>
 <head>
 <title>City Wise Cases</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h3>Cases All Over The Cities</h3>
-	<hr>
-	<table border="2">
-		<tr>
-			<th>Code</th>
-			<th>CityName</th>
-			<th>District</th>
-			<th>State</th>
-			<th>TotalCases</th>
-			<th>TotalActiveCases</th>
-			<th>Recovery</th>
-			<th>Deaths</th>
-		</tr>
-		<jstl:forEach items="${cities}" var="city">
-			<tr>
-				<td>${city.code}</td>
-				<td>${city.cityName}</td>
-				<td><a href="searchDistrictForUser?code=${city.district.code}">${city.district.districtName}</a></td>
-				<td><a href="searchStateForUser?code=${city.state.code}">${city.state.stateName}</a></td>
-				<td>${city.totalCase}</td>
-				<td>${city.totalActiveCase}</td>
-				<td>${city.recovery}</td>
-				<td>${city.death}</td>
-			</tr>
-		</jstl:forEach>
-	</table>
-	<br>
-	<%
-		int pageNumber = (Integer) request.getAttribute("pageNumber");
-	int increase = 0;
-	for (int i = 1; i <= pageNumber; i++) {
-	%>
-	<a href="paginationOfCity?startPage=<%=increase%>&itemPerPage=5"><%=i%></a>
-	<%
-		increase = increase + 6;
-	}
-	%>
-	<hr>
-	<a href="paginationOfDistrict?startPage=0&itemPerPage=5">District
-		Wise</a>
-	<br>
-	<a href="paginationOfState?startPage=0&itemPerPage=5">State Wise</a>
-	<br>
-	<a href="index.jsp">Home</a>
+	<div class="container">
+		<h1 class="text-center text-warning" style="padding: 10px">Cases
+			All Over The Cities</h1>
+		<table
+			class="table table-bordered table-hover table-striped table-reponsive-sm">
+			<thead>
+				<tr class="bg-dark">
+					<th class="text-center text-white">Code</th>
+					<th class="text-center text-white">CityName</th>
+					<th class="text-center text-white">District</th>
+					<th class="text-center text-white">State</th>
+					<th class="text-center text-white">TotalCases</th>
+					<th class="text-center text-white">TotalActiveCases</th>
+					<th class="text-center text-white">Recovery</th>
+					<th class="text-center text-white">Deaths</th>
+				</tr>
+			</thead>
+			<jstl:forEach items="${cities}" var="city">
+				<tbody>
+					<tr>
+						<td class="text-center">${city.code}</td>
+						<td class="text-center">${city.cityName}</td>
+						<td class="text-center"><a
+							href="searchDistrictForUser?code=${city.district.code}"
+							style="text-decoration: none;">${city.district.districtName}</a></td>
+						<td class="text-center"><a
+							href="searchStateForUser?code=${city.state.code}"
+							style="text-decoration: none;">${city.state.stateName}</a></td>
+						<td class="text-center">${city.totalCase}</td>
+						<td class="text-center">${city.totalActiveCase}</td>
+						<td class="text-center">${city.recovery}</td>
+						<td class="text-center">${city.death}</td>
+					</tr>
+				</tbody>
+			</jstl:forEach>
+		</table>
+	</div>
+	<div class="container">
+		<%
+			int pageNumber = (Integer) request.getAttribute("pageNumber");
+		int increase = 0;
+		for (int i = 1; i <= pageNumber; i++) {
+		%>
+		<ul class="pagination">
+			<li class="page-item active"><a
+				href="paginationOfCity?startPage=<%=increase%>&itemPerPage=5"
+				class="page-link"><%=i%></a></li>
+		</ul>
+		<%
+			increase = increase + 6;
+		}
+		%>
+		<a href="paginationOfDistrict?startPage=0&itemPerPage=5"
+			style="text-decoration: none;">District Wise</a> <br> <a
+			href="paginationOfState?startPage=0&itemPerPage=5"
+			style="text-decoration: none;">State Wise</a> <br> <a
+			href="index.jsp" style="text-decoration: none;">Home</a>
+	</div>
 </body>
 </html>
