@@ -38,8 +38,7 @@
 
 			<a href="adminLoginPage" class="nav-item nav-link"> <i
 				class="fas fa-user-cog"></i> Admin
-			</a> <a href="#clusters" class="nav-item nav-link  active ">Clusters</a>
-			<a href="#data" class="nav-item nav-link ">Data</a>
+			</a>
 
 			<!-- DropDown Wise-List -->
 			<div class="nav-item dropdown locale-selector">
@@ -60,15 +59,6 @@
 			<a href="http://localhost:8787/COVID_19/precaution"
 				class="nav-item nav-link ">Precaution</a> <a
 				class="nav-item nav-link " href="#help_links"> Helpful Links </a>
-			<!-- <div class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-					role="button" aria-haspopup="true" aria-expanded="false"> <i
-					class="fas fa-1x fa-question-circle-o"></i>
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#help_links"> Helpful Links </a>
-				</div>
-			</div> -->
 		</div>
 	</nav>
 
@@ -158,8 +148,8 @@
 	<!-------------------------------- FOOTER -------------------------------------->
 	<footer class="container-fluid footer bg-dark " id="help_links">
 		<br>
-		<div class="row m-auto">
-			<div class="col-sm-6">
+		<div class="row  m-auto">
+			<div class="col-sm-6 ">
 				<h3 class=" text-white font-weight-bolder">Helpful Links</h3>
 				<a href="https://www.mohfw.gov.in/" class="# "> Ministry of
 					Health and Family Welfare, Gov. of India </a><br> <a

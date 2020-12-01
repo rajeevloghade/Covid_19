@@ -37,9 +37,7 @@
 		<div class="nav nav-pills header-links">
 
 			<a href="adminLoginPage" class="nav-item nav-link"><i
-				class="fas fa-user-cog"></i> Admin</a> <a href="#clusters"
-				class="nav-item nav-link  active ">Clusters</a> <a href="#data"
-				class="nav-item nav-link ">Data</a>
+				class="fas fa-user-cog"></i> Admin</a> 
 
 			<!-- DropDown Wise-List -->
 			<div class="nav-item dropdown locale-selector">

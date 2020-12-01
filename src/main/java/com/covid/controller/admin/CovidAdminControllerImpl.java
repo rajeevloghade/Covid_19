@@ -32,19 +32,22 @@ public class CovidAdminControllerImpl implements CovidCityController, CovidState
 	}
 
 	@RequestMapping("adminDashBoard")
-	public String getAdminDashboardPage(HttpServletRequest request) {
+	public ModelAndView getAdminDashboardPage(HttpServletRequest request) {
 		String AdminEmail = (String) request.getSession().getAttribute("AdminEmail");
 		if (AdminEmail != null) {
-			return "AdminDashBoard";
+			List<State> states = covidStateService.getAllStateCases();
+			ModelAndView view = new ModelAndView("AdminDashBoard");
+			view.addObject("states", states);
+			return view;
 		} else {
-			return "AdminLogin";
+			return new ModelAndView("AdminLogin");
 		}
 	}
 
 	@RequestMapping("logout")
 	public String logOut(HttpServletRequest request) {
 		request.getSession().invalidate();
-		return "AdminLogin";
+		return "index";
 	}
 
 	@RequestMapping("precaution")
@@ -61,7 +64,11 @@ public class CovidAdminControllerImpl implements CovidCityController, CovidState
 			// setting the email to session
 			HttpSession session = request.getSession();
 			session.setAttribute("AdminEmail", email);
-			return new ModelAndView("AdminDashBoard");
+
+			List<State> states = covidStateService.getAllStateCases();
+			ModelAndView view = new ModelAndView("AdminDashBoard");
+			view.addObject("states", states);
+			return view;
 		} else {
 			return new ModelAndView("AdminLogin");
 		}

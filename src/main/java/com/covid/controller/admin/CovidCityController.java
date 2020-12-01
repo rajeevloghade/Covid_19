@@ -13,7 +13,7 @@ public interface CovidCityController {
 
 	String getAdminLoginPage();
 
-	String getAdminDashboardPage(HttpServletRequest request);
+	ModelAndView getAdminDashboardPage(HttpServletRequest request);
 
 	ModelAndView saveCase(City city, BindingResult result);
 
