@@ -7,12 +7,12 @@
 <body>
 	<h2>State Information :</h2>
 	<hr>
-	<h4>Code : ${stateObj.code}</h4>
-	<h4>StateName : ${stateObj.stateName}</h4>
-	<h4>TotalCase : ${stateObj.totalCase}</h4>
-	<h4>TotalActiveCase : ${stateObj.totalActiveCase}</h4>
-	<h4>Recovery : ${stateObj.recovery}</h4>
-	<h4>Death : ${stateObj.death}</h4>
+	<h4>Code : ${districtObj.code}</h4>
+	<h4>StateName : ${districtObj.stateName}</h4>
+	<h4>TotalCase : ${districtObj.totalCase}</h4>
+	<h4>TotalActiveCase : ${districtObj.totalActiveCase}</h4>
+	<h4>Recovery : ${districtObj.recovery}</h4>
+	<h4>Death : ${districtObj.death}</h4>
 	<hr>
 	<a href="getAllDistrictCases">District Wise</a>
 	<br>

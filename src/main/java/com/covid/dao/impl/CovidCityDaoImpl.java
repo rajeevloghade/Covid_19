@@ -20,7 +20,6 @@ import com.covid.dao.CovidCityDao;
 import com.covid.model.City;
 import com.covid.model.District;
 import com.covid.model.State;
-import com.mchange.v2.async.StrandedTaskReporting;
 
 @Repository("CovidCityDaoImpl")
 public class CovidCityDaoImpl implements CovidCityDao {
@@ -70,7 +69,7 @@ public class CovidCityDaoImpl implements CovidCityDao {
 		return city;
 	}
 
-	public List<Object[]> getTotalCasesOfCity(String stateid_fk) {
+	public Object getTotalCasesOfCity(String stateid_fk) {
 		Session session = sessionFactory.openSession();
 		Criteria createCriteria = session.createCriteria(City.class);
 		Criterion eq = Restrictions.eq("state", new State(stateid_fk));
@@ -91,8 +90,7 @@ public class CovidCityDaoImpl implements CovidCityDao {
 		createCriteria.add(eq);
 		createCriteria.setProjection(projectionList);
 
-		List<Object[]> list = createCriteria.list();
-		return list;
+		return createCriteria.uniqueResult();
 	}
 
 	public List<City> getAllCityByStateId(String stateId, int startPage, int itemPerPage) {

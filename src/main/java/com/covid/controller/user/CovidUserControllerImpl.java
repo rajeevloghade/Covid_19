@@ -51,12 +51,24 @@ public class CovidUserControllerImpl
 	@RequestMapping("paginationOfState")
 	public ModelAndView paginationOfState(@RequestParam("startPage") int startPage,
 			@RequestParam("itemPerPage") int itemPerPage) {
+		int sumOfDeath = 0, sumOfRecovery = 0, sumOfTotalActiveCase = 0, sumOfTotalCase = 0;
 		int availableStates = covidStateService.getAllStateCases().size();
 		int pageNumber = (int) Math.ceil(availableStates / itemPerPage);
 		List<State> states = covidStateService.paginationOfState(startPage, itemPerPage);
+		List<State> allStateCases = covidStateService.getAllStateCases();
+		for (State state : allStateCases) {
+			sumOfDeath += state.getDeath();
+			sumOfRecovery = state.getRecovery();
+			sumOfTotalActiveCase += state.getTotalActiveCase();
+			sumOfTotalCase += state.getTotalCase();
+		}
 		ModelAndView view = new ModelAndView("User/JSTLStatesResultForUser");
 		view.addObject("pageNumber", pageNumber);
 		view.addObject("states", states);
+		view.addObject("sumOfDeath", sumOfDeath);
+		view.addObject("sumOfRecovery", sumOfRecovery);
+		view.addObject("sumOfTotalActiveCase", sumOfTotalActiveCase);
+		view.addObject("sumOfTotalCase", sumOfTotalCase);
 		return view;
 	}
 
@@ -84,24 +96,48 @@ public class CovidUserControllerImpl
 	@RequestMapping("getAllDistrictByStateIdForUser")
 	public ModelAndView getAllDistrictByStateIdForUser(@RequestParam("stateid_fk") String stateId, int startPage,
 			int itemPerPage) {
+		int sumOfDeath = 0, sumOfRecovery = 0, sumOfTotalActiveCase = 0, sumOfTotalCase = 0;
 		int availableCities = covidDistrictService.getAllDistrictCasesForUser().size();
 		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
 		List<District> districts = covidDistrictService.getAllDistrictByStateId(stateId, startPage, itemPerPage);
+		List<District> allDistrictCasesForUser = covidDistrictService.getAllDistrictCasesForUser();
+		for (District district : allDistrictCasesForUser) {
+			sumOfDeath += district.getDeath();
+			sumOfRecovery = district.getRecovery();
+			sumOfTotalActiveCase += district.getTotalActiveCase();
+			sumOfTotalCase += district.getTotalCase();
+		}
 		ModelAndView view = new ModelAndView("User/JSTLDistrictResultForUser");
 		view.addObject("pageNumber", pageNumber);
 		view.addObject("districts", districts);
+		view.addObject("sumOfDeath", sumOfDeath);
+		view.addObject("sumOfRecovery", sumOfRecovery);
+		view.addObject("sumOfTotalActiveCase", sumOfTotalActiveCase);
+		view.addObject("sumOfTotalCase", sumOfTotalCase);
 		return view;
 	}
 
 	@RequestMapping("paginationOfDistrict")
 	public ModelAndView paginationOfDistrict(@RequestParam("startPage") int startPage,
 			@RequestParam("itemPerPage") int itemPerPage) {
+		int sumOfDeath = 0, sumOfRecovery = 0, sumOfTotalActiveCase = 0, sumOfTotalCase = 0;
 		int availableDistricts = covidDistrictService.getAllDistrictCasesForUser().size();
 		int pageNumber = (int) Math.ceil(availableDistricts / itemPerPage);
 		List<District> districts = covidDistrictService.paginationOfDistrict(startPage, itemPerPage);
+		List<District> allDistrictCasesForUser = covidDistrictService.getAllDistrictCasesForUser();
+		for (District district : allDistrictCasesForUser) {
+			sumOfDeath += district.getDeath();
+			sumOfRecovery = district.getRecovery();
+			sumOfTotalActiveCase += district.getTotalActiveCase();
+			sumOfTotalCase += district.getTotalCase();
+		}
 		ModelAndView view = new ModelAndView("User/JSTLDistrictResultForUser");
 		view.addObject("pageNumber", pageNumber);
 		view.addObject("districts", districts);
+		view.addObject("sumOfDeath", sumOfDeath);
+		view.addObject("sumOfRecovery", sumOfRecovery);
+		view.addObject("sumOfTotalActiveCase", sumOfTotalActiveCase);
+		view.addObject("sumOfTotalCase", sumOfTotalCase);
 		return view;
 	}
 //	<--------------------------------------------CITY RELATED METHOD---------------------------------------------------->
@@ -120,36 +156,72 @@ public class CovidUserControllerImpl
 	@RequestMapping("getAllCityByDistrictIdForUser")
 	public ModelAndView getAllCityByDistrictIdForUser(@RequestParam("districtid_fk") String districtId, int startPage,
 			int itemPerPage) {
+		int sumOfDeath = 0, sumOfRecovery = 0, sumOfTotalActiveCase = 0, sumOfTotalCase = 0;
 		int availableCities = covidCityService.getAllCityCasesForUser().size();
 		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
 		List<City> cities = covidCityService.getAllCityByDistrictId(districtId, startPage, itemPerPage);
+		List<City> allCityCasesForUser = covidCityService.getAllCityCasesForUser();
+		for (City city : allCityCasesForUser) {
+			sumOfDeath += city.getDeath();
+			sumOfRecovery = city.getRecovery();
+			sumOfTotalActiveCase += city.getTotalActiveCase();
+			sumOfTotalCase += city.getTotalCase();
+		}
 		ModelAndView view = new ModelAndView("User/JSTLCityResultForUser");
 		view.addObject("pageNumber", pageNumber);
 		view.addObject("cities", cities);
+		view.addObject("sumOfDeath", sumOfDeath);
+		view.addObject("sumOfRecovery", sumOfRecovery);
+		view.addObject("sumOfTotalActiveCase", sumOfTotalActiveCase);
+		view.addObject("sumOfTotalCase", sumOfTotalCase);
 		return view;
 	}
 
 	@RequestMapping("getAllCityByStateIdForUser")
 	public ModelAndView getAllCityByStateIdForUser(@RequestParam("stateid_fk") String stateId, int startPage,
 			int itemPerPage) {
+		int sumOfDeath = 0, sumOfRecovery = 0, sumOfTotalActiveCase = 0, sumOfTotalCase = 0;
 		int availableCities = covidCityService.getAllCityCasesForUser().size();
 		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
 		List<City> cities = covidCityService.getAllCityByStateId(stateId, startPage, itemPerPage);
+		List<City> allCityCasesForUser = covidCityService.getAllCityCasesForUser();
+		for (City city : allCityCasesForUser) {
+			sumOfDeath += city.getDeath();
+			sumOfRecovery = city.getRecovery();
+			sumOfTotalActiveCase += city.getTotalActiveCase();
+			sumOfTotalCase += city.getTotalCase();
+		}
 		ModelAndView view = new ModelAndView("User/JSTLCityResultForUser");
 		view.addObject("pageNumber", pageNumber);
 		view.addObject("cities", cities);
+		view.addObject("sumOfDeath", sumOfDeath);
+		view.addObject("sumOfRecovery", sumOfRecovery);
+		view.addObject("sumOfTotalActiveCase", sumOfTotalActiveCase);
+		view.addObject("sumOfTotalCase", sumOfTotalCase);
 		return view;
 	}
 
 	@RequestMapping("paginationOfCity")
 	public ModelAndView paginationOfCity(@RequestParam("startPage") int startPage,
 			@RequestParam("itemPerPage") int itemPerPage) {
+		int sumOfDeath = 0, sumOfRecovery = 0, sumOfTotalActiveCase = 0, sumOfTotalCase = 0;
 		int availableCities = covidCityService.getAllCityCasesForUser().size();
 		int pageNumber = (int) Math.ceil(availableCities / itemPerPage);
 		List<City> cities = covidCityService.paginationOfCity(startPage, itemPerPage);
+		List<City> allCityCasesForUser = covidCityService.getAllCityCasesForUser();
+		for (City city : allCityCasesForUser) {
+			sumOfDeath += city.getDeath();
+			sumOfRecovery = city.getRecovery();
+			sumOfTotalActiveCase += city.getTotalActiveCase();
+			sumOfTotalCase += city.getTotalCase();
+		}
 		ModelAndView view = new ModelAndView("User/JSTLCityResultForUser");
 		view.addObject("pageNumber", pageNumber);
 		view.addObject("cities", cities);
+		view.addObject("sumOfDeath", sumOfDeath);
+		view.addObject("sumOfRecovery", sumOfRecovery);
+		view.addObject("sumOfTotalActiveCase", sumOfTotalActiveCase);
+		view.addObject("sumOfTotalCase", sumOfTotalCase);
 		return view;
 	}
 

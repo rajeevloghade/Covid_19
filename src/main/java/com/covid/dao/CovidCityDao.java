@@ -16,7 +16,7 @@ public interface CovidCityDao {
 
 	City saveCase(City city);
 
-	List<Object[]> getTotalCasesOfCity(String id);
+	Object getTotalCasesOfCity(String id);
 
 	List<City> getAllCityByStateId(String stateId,int startPage, int itemPerPage);
 

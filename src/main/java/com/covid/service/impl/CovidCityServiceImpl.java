@@ -42,7 +42,7 @@ public class CovidCityServiceImpl implements CovidCityService {
 		return covidCityDao.searchCityByName(id);
 	}
 
-	public List<Object[]> getTotalCasesOfCity(String id) {
+	public Object getTotalCasesOfCity(String id) {
 		return covidCityDao.getTotalCasesOfCity(id);
 	}
 
