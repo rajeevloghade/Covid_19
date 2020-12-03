@@ -73,7 +73,9 @@
 		</div>
 	</nav>
 
+
 	<!--------------------------------- TABLE ---------------------------------------->
+	<br>
 	<div class="container">
 		<h1 class="text-center text-warning" style="padding: 10px">Cases
 			All Over The State</h1>
@@ -103,9 +105,11 @@
 						<td class="text-center">${state.recovery}</td>
 						<td class="text-center">${state.death}</td>
 						<td class="text-center"><a
-							href="stateUpdate?code=${state.code}"><i class="fas fa-pencil-alt"></i></a></td>
+							href="stateUpdate?code=${state.code}"><i
+								class="fas fa-pencil-alt"></i></a></td>
 						<td class="text-center"><a
-							href="stateDelete?code=${state.code}"><i class="fas fa-trash-alt"></i></a></td>
+							href="stateDelete?code=${state.code}"><i
+								class="fas fa-trash-alt"></i></a></td>
 						<td class="text-center text-decoration-none"><a
 							href="getAllDistrictByStateId?itemPerPage=1000&stateid_fk=${state.code}">Districts</a></td>
 						<td class="text-center text-decoration-none"><a

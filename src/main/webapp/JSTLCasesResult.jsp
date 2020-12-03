@@ -1,3 +1,5 @@
+<!------- Navigation Bar -------->
+<%@include file="NavigationBarAdmin.jsp"%>
 <%@page isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstl"%>
 
@@ -57,14 +59,21 @@
 						<td class="text-center">${city.recovery}</td>
 						<td class="text-center">${city.death}</td>
 						<td class="text-center"><a
-							href="cityUpdate?code=${city.code}"><i class="fas fa-pencil-alt"></i></a></td>
+							href="cityUpdate?code=${city.code}"><i
+								class="fas fa-pencil-alt"></i></a></td>
 						<td class="text-center"><a
-							href="cityDelete?code=${city.code}"><i class="fas fa-trash-alt"></i></a></td>
+							href="cityDelete?code=${city.code}"><i
+								class="fas fa-trash-alt"></i></a></td>
 					</tr>
 				</tbody>
 			</jstl:forEach>
 		</table>
-		<a href="adminDashBoard">Admin Dashboard</a>
+		<a href="insertCityPage" style="text-decoration: none;">Add More
+			City / </a> <a href="adminDashBoard" style="text-decoration: none;">Admin
+			Dashboard</a>
 	</div>
+
+	<!-------------------------------- FOOTER -------------------------------------->
+	<%@include file="User/Footer.jsp"%>
 </body>
 </html>

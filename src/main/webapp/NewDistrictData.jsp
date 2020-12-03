@@ -1,6 +1,7 @@
+<!------- Navigation Bar -------->
+<%@include file="NavigationBarAdmin.jsp"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="error"%>
 
-<!DOCTYPE html>
 <html>
 <head>
 <title>New District Entry</title>
@@ -18,9 +19,8 @@
 </head>
 <body>
 	<div class="container">
-		<br> <br>
 		<h1 class="text-success">Add New District</h1>
-		<br> <br>
+		<br>
 		<form method="post" action="DistrictInsertion" class="bg-light">
 			<div class="from-group">
 				<lable for="code" class="font-weight-bold"> District Code :</lable>
@@ -67,11 +67,12 @@
 			</div>
 			<input type="submit" value="Add District" class="btn btn-primary">
 		</form>
-		<br>
 		<div>
 			<a href="index.jsp">Home</a><br>
 		</div>
-		<br> <br>
 	</div>
+
+	<!-------------------------------- FOOTER -------------------------------------->
+	<%@include file="User/Footer.jsp"%>
 </body>
 </html>

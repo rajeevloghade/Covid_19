@@ -1,3 +1,5 @@
+<!------- Navigation Bar -------->
+<%@include file="NavigationBarAdmin.jsp"%>
 <%@page isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstl"%>
 
@@ -68,8 +70,12 @@
 				</tbody>
 			</jstl:forEach>
 		</table>
-		<a href="getAllStateCases">State Wise</a> <br> <a
-			href="adminDashBoard">AdminDashBoard</a>
+		<a href="insertDistrictPage" style="text-decoration: none;">Add
+			More District / </a> <a href="adminDashBoard"
+			style="text-decoration: none;">Admin Dashboard</a>
 	</div>
+
+	<!-------------------------------- FOOTER -------------------------------------->
+	<%@include file="User/Footer.jsp"%>
 </body>
 </html>

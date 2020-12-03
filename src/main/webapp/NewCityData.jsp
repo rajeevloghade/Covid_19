@@ -1,5 +1,7 @@
+<!------- Navigation Bar -------->
+<%@include file="NavigationBarAdmin.jsp"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="error"%>
-<!DOCTYPE html>
+
 <html>
 <head>
 <title>New City Entry</title>
@@ -17,9 +19,8 @@
 </head>
 <body>
 	<div class="container">
-		<br> <br>
 		<h1 class="text-success">Add New City</h1>
-		<br> <br>
+		<br> 
 		<form method="post" action="CityInsertion" class="bg-light">
 			<div class="from-group">
 				<lable for="code" class="font-weight-bold"> City Code :</lable>
@@ -73,11 +74,12 @@
 			</div>
 			<input type="submit" value="Add City" class="btn btn-primary">
 		</form>
-		<br>
 		<div>
 			<a href="index.jsp">Home</a><br>
 		</div>
-		<br> <br>
 	</div>
+
+	<!-------------------------------- FOOTER -------------------------------------->
+	<%@include file="User/Footer.jsp"%>
 </body>
 </html>
