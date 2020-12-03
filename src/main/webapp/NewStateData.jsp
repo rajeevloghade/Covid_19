@@ -62,7 +62,8 @@
 			<input type="submit" value="Add State" class="btn btn-primary">
 		</form>
 		<div>
-			<a href="index.jsp">Home</a><br>
+			<a href="adminDashBoard" style="text-decoration: none;">Admin
+			Dashboard</a>
 		</div>
 	</div>
 

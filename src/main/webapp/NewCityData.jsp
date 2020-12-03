@@ -20,7 +20,7 @@
 <body>
 	<div class="container">
 		<h1 class="text-success">Add New City</h1>
-		<br> 
+		<br>
 		<form method="post" action="CityInsertion" class="bg-light">
 			<div class="from-group">
 				<lable for="code" class="font-weight-bold"> City Code :</lable>
@@ -75,7 +75,8 @@
 			<input type="submit" value="Add City" class="btn btn-primary">
 		</form>
 		<div>
-			<a href="index.jsp">Home</a><br>
+			<a href="adminDashBoard" style="text-decoration: none;">Admin
+				Dashboard</a>
 		</div>
 	</div>
 

@@ -75,7 +75,6 @@
 
 
 	<!--------------------------------- TABLE ---------------------------------------->
-	<br>
 	<div class="container">
 		<h1 class="text-center text-warning" style="padding: 10px">Cases
 			All Over The State</h1>
