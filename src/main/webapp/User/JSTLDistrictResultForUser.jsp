@@ -89,7 +89,7 @@
 							Update : Total cases of India</h1>
 					</div>
 					<div class="card-body">
-						<p>${sumOfTotalCase}peoplearesofaraffected in India by novel
+						<p>${sumOfTotalCase}peoplearesofaraffectedin India by novel
 							coronavirus covid-19. ${sumOfRecovery} out of ${sumOfTotalCase}
 							have recovered. Sadly, ${sumOfDeath} patients have died due to
 							coronavirus in India. 434821 patients are still in hospital and
