@@ -32,7 +32,8 @@
 				<div class="row">
 					<div class="col-12 mb-3">
 						<div class="alert bg-danger text-light mb-0 mt-3 mt-lg-0">
-							<strong> Last case recorded in ${district.districtName}</strong>
+							<strong> Last case recorded in
+								${districtObj.districtName}</strong>
 						</div>
 					</div>
 					<div class="col-12 card-stats">
@@ -88,19 +89,21 @@
 							Update : Total cases of India</h1>
 					</div>
 					<div class="card-body">
-						<p>${districtObj.totalCase}peopleare so far in
-							${districtObj.districtName} by novel coronavirus covid-19.
-							${districtObj.recovery} out of ${districtObj.totalCase} have
-							recovered. Sadly, ${districtObj.death} patients have died due to
-							coronavirus in ${districtObj.districtName}. 434821 patients are
-							still in hospital and recovering. The last recorded case of
-							coronavirus in India. Below is the list of sources from which
-							data is aggregated into a crowdsourced patient database along
-							with some note on travel history and suspected contraction from
-							another patient if any. All data is verified by a group of
-							volunteers at Covid19India.org after aggregating from various
-							district and state level health bulletins and other reliable
-							sources.</p>
+						<p>${districtObj.totalCase}
+							people are so far in ${districtObj.districtName} by novel
+							coronavirus covid-19. ${districtObj.recovery} out of
+							${districtObj.totalCase} have recovered. Sadly,
+							${districtObj.death} patients have died due to coronavirus in
+							${districtObj.districtName}. 434821 patients are still in
+							hospital and recovering. The last recorded case of coronavirus in
+							India. Below is the list of sources from which data is aggregated
+							into a crowdsourced patient database along with some note on
+							travel history and suspected contraction from another patient if
+							any. All data is verified by a group of volunteers at <a
+								href="https://www.<a href="https://www.covid19india.org/" target="_blank">Covid19India.org</a>/"
+								target="_blank"></a> after aggregating from various district and
+							state level health bulletins and other reliable sources.
+						</p>
 					</div>
 				</div>
 			</div>

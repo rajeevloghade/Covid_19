@@ -99,7 +99,7 @@
 							is the list of sources from which data is aggregated into a
 							crowdsourced patient database along with some note on travel
 							history and suspected contraction from another patient if any.
-							All data is verified by a group of volunteers at Covid19India.org
+							All data is verified by a group of volunteers at <a href="https://www.covid19india.org/" target="_blank">Covid19India.org</a>
 							after aggregating from various district and state level health
 							bulletins and other reliable sources.</p>
 					</div>

@@ -122,10 +122,7 @@ public class CovidUserControllerImpl
 			@RequestParam("itemPerPage") int itemPerPage) {
 		int sumOfDeath = 0, sumOfRecovery = 0, sumOfTotalActiveCase = 0, sumOfTotalCase = 0;
 		int availableDistricts = covidDistrictService.getAllDistrictCasesForUser().size();
-		int pageNumber = (int) Math.round(availableDistricts / itemPerPage);
-		// TODO fix floor,ceil,round
-//		System.out.println("startPage:" + startPage + "itemPerPage:" + itemPerPage);
-//		System.out.println("availableDistricts:" + availableDistricts + "pageNumber:" + pageNumber);
+		int pageNumber = (int) Math.ceil(availableDistricts / itemPerPage);
 		List<District> districts = covidDistrictService.paginationOfDistrict(startPage, itemPerPage);
 		List<District> allDistrictCasesForUser = covidDistrictService.getAllDistrictCasesForUser();
 		for (District district : allDistrictCasesForUser) {

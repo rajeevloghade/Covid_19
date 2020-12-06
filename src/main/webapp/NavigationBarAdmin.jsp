@@ -40,11 +40,11 @@
 				</a>
 				<div class="dropdown-menu">
 					<a href="insertStatePage" style="text-decoration: none;"
-						class="dropdown-item">State <i class="fas fa-plus-circle"></i></a>
+						class="dropdown-item">State  <i class="fas fa-plus-circle"></i></a>
 					<a href="insertDistrictPage" style="text-decoration: none;"
-						class="dropdown-item">District <i class="fas fa-plus-circle"></i></a>
+						class="dropdown-item">District  <i class="fas fa-plus-circle"></i></a>
 					<a href="insertCityPage" style="text-decoration: none;"
-						class="dropdown-item">City <i class="fas fa-plus-circle"></i></a>
+						class="dropdown-item">City  <i class="fas fa-plus-circle"></i></a>
 				</div>
 			</div>
 
