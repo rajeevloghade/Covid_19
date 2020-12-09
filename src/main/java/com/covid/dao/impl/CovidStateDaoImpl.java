@@ -56,7 +56,7 @@ public class CovidStateDaoImpl implements CovidStateDao {
 
 	public List<State> getAllCases() {
 		Session session = sessionFactory.openSession();
-		List<State> states = session.createCriteria(State.class).addOrder(Order.desc("totalActiveCase")).list();
+		List<State> states = session.createCriteria(State.class).addOrder(Order.asc("stateName")).list();
 		session.close();
 		return states;
 	}

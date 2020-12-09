@@ -34,8 +34,7 @@ public class CovidDistrictDaoImpl implements CovidDistrictDao {
 
 	public List<District> getAllDistrictCases() {
 		Session session = sessionFactory.openSession();
-		List<District> districts = session.createCriteria(District.class).addOrder(Order.desc("totalActiveCase"))
-				.list();
+		List<District> districts = session.createCriteria(District.class).addOrder(Order.asc("districtName")).list();
 		session.close();
 		return districts;
 	}
@@ -72,15 +71,14 @@ public class CovidDistrictDaoImpl implements CovidDistrictDao {
 		createCriteria.add(eqProperty);
 		createCriteria.setFirstResult(startPage);
 		createCriteria.setMaxResults(itemPerPage);
-		List<District> districts = createCriteria.addOrder(Order.desc("totalActiveCase")).list();
+		List<District> districts = createCriteria.addOrder(Order.asc("districtName")).list();
 		session.close();
 		return districts;
 	}
 
 	public List<District> getAllDistrictCasesForUser() {
 		Session session = sessionFactory.openSession();
-		List<District> districts = session.createCriteria(District.class).addOrder(Order.desc("totalActiveCase"))
-				.list();
+		List<District> districts = session.createCriteria(District.class).addOrder(Order.asc("districtName")).list();
 		session.close();
 		return districts;
 	}

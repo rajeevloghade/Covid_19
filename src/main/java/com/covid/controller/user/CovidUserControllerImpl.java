@@ -58,7 +58,7 @@ public class CovidUserControllerImpl
 		List<State> allStateCases = covidStateService.getAllStateCases();
 		for (State state : allStateCases) {
 			sumOfDeath += state.getDeath();
-			sumOfRecovery = state.getRecovery();
+			sumOfRecovery += state.getRecovery();
 			sumOfTotalActiveCase += state.getTotalActiveCase();
 			sumOfTotalCase += state.getTotalCase();
 		}
@@ -103,7 +103,7 @@ public class CovidUserControllerImpl
 		List<District> allDistrictCasesForUser = covidDistrictService.getAllDistrictCasesForUser();
 		for (District district : allDistrictCasesForUser) {
 			sumOfDeath += district.getDeath();
-			sumOfRecovery = district.getRecovery();
+			sumOfRecovery += district.getRecovery();
 			sumOfTotalActiveCase += district.getTotalActiveCase();
 			sumOfTotalCase += district.getTotalCase();
 		}
@@ -127,7 +127,7 @@ public class CovidUserControllerImpl
 		List<District> allDistrictCasesForUser = covidDistrictService.getAllDistrictCasesForUser();
 		for (District district : allDistrictCasesForUser) {
 			sumOfDeath += district.getDeath();
-			sumOfRecovery = district.getRecovery();
+			sumOfRecovery += district.getRecovery();
 			sumOfTotalActiveCase += district.getTotalActiveCase();
 			sumOfTotalCase += district.getTotalCase();
 		}
@@ -163,7 +163,7 @@ public class CovidUserControllerImpl
 		List<City> allCityCasesForUser = covidCityService.getAllCityCasesForUser();
 		for (City city : allCityCasesForUser) {
 			sumOfDeath += city.getDeath();
-			sumOfRecovery = city.getRecovery();
+			sumOfRecovery += city.getRecovery();
 			sumOfTotalActiveCase += city.getTotalActiveCase();
 			sumOfTotalCase += city.getTotalCase();
 		}
@@ -187,7 +187,7 @@ public class CovidUserControllerImpl
 		List<City> allCityCasesForUser = covidCityService.getAllCityCasesForUser();
 		for (City city : allCityCasesForUser) {
 			sumOfDeath += city.getDeath();
-			sumOfRecovery = city.getRecovery();
+			sumOfRecovery += city.getRecovery();
 			sumOfTotalActiveCase += city.getTotalActiveCase();
 			sumOfTotalCase += city.getTotalCase();
 		}
@@ -211,7 +211,7 @@ public class CovidUserControllerImpl
 		List<City> allCityCasesForUser = covidCityService.getAllCityCasesForUser();
 		for (City city : allCityCasesForUser) {
 			sumOfDeath += city.getDeath();
-			sumOfRecovery = city.getRecovery();
+			sumOfRecovery += city.getRecovery();
 			sumOfTotalActiveCase += city.getTotalActiveCase();
 			sumOfTotalCase += city.getTotalCase();
 		}

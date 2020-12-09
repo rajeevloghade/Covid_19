@@ -161,8 +161,8 @@
 			int increase = 0;
 			for (int i = 1; i <= pageNumber; i++) {
 			%>
-			<ul class="pagination">
-				<li class="page-item active"><a
+			<ul class="pagination pagination-sm">
+				<li class="page-item"><a
 					href="paginationOfCity?startPage=<%=increase%>&itemPerPage=5"
 					class="page-link"><%=i%></a></li>
 			</ul>

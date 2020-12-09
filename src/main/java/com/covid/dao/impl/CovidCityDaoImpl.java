@@ -48,7 +48,7 @@ public class CovidCityDaoImpl implements CovidCityDao {
 
 	public List<City> getAllCases() {
 		Session session = sessionFactory.openSession();
-		List<City> cities = session.createCriteria(City.class).addOrder(Order.desc("totalActiveCase")).list();
+		List<City> cities = session.createCriteria(City.class).addOrder(Order.asc("cityName")).list();
 		session.close();
 		return cities;
 	}
@@ -100,7 +100,7 @@ public class CovidCityDaoImpl implements CovidCityDao {
 		createCriteria.add(eqProperty);
 		createCriteria.setFirstResult(startPage);
 		createCriteria.setMaxResults(itemPerPage);
-		List<City> cities = createCriteria.addOrder(Order.desc("totalActiveCase")).list();
+		List<City> cities = createCriteria.addOrder(Order.asc("cityName")).list();
 		session.close();
 		return cities;
 	}
@@ -112,14 +112,14 @@ public class CovidCityDaoImpl implements CovidCityDao {
 		createCriteria.add(eqProperty);
 		createCriteria.setFirstResult(startPage);// setting limit from
 		createCriteria.setMaxResults(itemPerPage);// items per page
-		List<City> cities = createCriteria.addOrder(Order.desc("totalActiveCase")).list();
+		List<City> cities = createCriteria.addOrder(Order.asc("cityName")).list();
 		session.close();
 		return cities;
 	}
 
 	public List<City> getAllCityCasesForUser() {
 		Session session = sessionFactory.openSession();
-		List<City> cities = session.createCriteria(City.class).addOrder(Order.desc("totalActiveCase")).list();
+		List<City> cities = session.createCriteria(City.class).addOrder(Order.asc("cityName")).list();
 		session.close();
 		return cities;
 	}
