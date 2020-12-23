@@ -91,17 +91,20 @@
 							Update : Total cases of India</h1>
 					</div>
 					<div class="card-body">
-						<p>9463254 people are so far affected in India by novel
-							coronavirus covid-19. 8888595 out of 9463254 have recovered.
-							Sadly, 137659 patients have died due to coronavirus in India.
-							434821 patients are still in hospital and recovering. The last
-							recorded case of coronavirus in India was 53 minutes ago. Below
-							is the list of sources from which data is aggregated into a
-							crowdsourced patient database along with some note on travel
-							history and suspected contraction from another patient if any.
-							All data is verified by a group of volunteers at <a href="https://www.covid19india.org/" target="_blank">Covid19India.org</a>
-							after aggregating from various district and state level health
-							bulletins and other reliable sources.</p>
+						<p>
+							9463254 people are so far affected in India by novel coronavirus
+							covid-19. 8888595 out of 9463254 have recovered. Sadly, 137659
+							patients have died due to coronavirus in India. 434821 patients
+							are still in hospital and recovering. The last recorded case of
+							coronavirus in India was 53 minutes ago. Below is the list of
+							sources from which data is aggregated into a crowdsourced patient
+							database along with some note on travel history and suspected
+							contraction from another patient if any. All data is verified by
+							a group of volunteers at <a href="https://www.covid19india.org/"
+								target="_blank">Covid19India.org</a> after aggregating from
+							various district and state level health bulletins and other
+							reliable sources.
+						</p>
 					</div>
 				</div>
 			</div>

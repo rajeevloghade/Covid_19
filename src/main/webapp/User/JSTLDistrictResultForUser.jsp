@@ -89,16 +89,17 @@
 							Update : Total cases of India</h1>
 					</div>
 					<div class="card-body">
-						<p>${sumOfTotalCase} people are so far affected in
-							India by novel coronavirus covid-19. ${sumOfRecovery} out of
-							${sumOfTotalCase} have recovered. Sadly, ${sumOfDeath} patients
-							have died due to coronavirus in India. 434821 patients are still
-							in hospital and recovering. The last recorded case of coronavirus
-							in India. Below is the list of sources from which data is
-							aggregated into a crowdsourced patient database along with some
-							note on travel history and suspected contraction from another
-							patient if any. All data is verified by a group of volunteers at
-							<a href="https://www.covid19india.org/" target="_blank">Covid19India.org</a>
+						<p>${sumOfTotalCase}
+							people are so far affected in India by novel coronavirus
+							covid-19. ${sumOfRecovery} out of ${sumOfTotalCase} have
+							recovered. Sadly, ${sumOfDeath} patients have died due to
+							coronavirus in India. 434821 patients are still in hospital and
+							recovering. The last recorded case of coronavirus in India. Below
+							is the list of sources from which data is aggregated into a
+							crowdsourced patient database along with some note on travel
+							history and suspected contraction from another patient if any.
+							All data is verified by a group of volunteers at <a
+								href="https://www.covid19india.org/" target="_blank">Covid19India.org</a>
 							after aggregating from various district and state level health
 							bulletins and other reliable sources.
 						</p>
@@ -155,22 +156,20 @@
 				</tbody>
 			</jstl:forEach>
 		</table>
-			<%
-				int pageNumber = (Integer) request.getAttribute("pageNumber");
-			int increase = 0;
-			for (int i = 1; i <= pageNumber; i++) {
-			%>
-		<div class="container">
 			<ul class="pagination pagination-sm">
+				<%
+					int pageNumber = (Integer) request.getAttribute("pageNumber");
+				int increase = 0;
+				for (int i = 1; i <= pageNumber; i++) {
+				%>
 				<li class="page-item"><a
 					href="paginationOfDistrict?startPage=<%=increase%>&itemPerPage=5"
 					class="page-link"><%=i%></a></li>
+				<%
+					increase = increase + 6;
+				}
+				%>
 			</ul>
-		</div>
-			<%
-				increase = increase + 6;
-			}
-			%>
 		<a href="paginationOfState?startPage=0&itemPerPage=5"
 			style="text-decoration: none;">State Wise / </a> <a href="index.jsp"
 			style="text-decoration: none;"><i class="fas fa-home"></i></a>

@@ -100,9 +100,9 @@
 							into a crowdsourced patient database along with some note on
 							travel history and suspected contraction from another patient if
 							any. All data is verified by a group of volunteers at <a
-								href="https://www.<a href="https://www.covid19india.org/" target="_blank">Covid19India.org</a>/"
-								target="_blank"></a> after aggregating from various district and
-							state level health bulletins and other reliable sources.
+								href="https://www.covid19india.org/" target="_blank">Covid19India.org</a>
+							after aggregating from various district and state level health
+							bulletins and other reliable sources.
 						</p>
 					</div>
 				</div>

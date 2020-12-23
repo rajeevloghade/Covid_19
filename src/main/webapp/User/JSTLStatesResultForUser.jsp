@@ -158,22 +158,20 @@
 				</tbody>
 			</jstl:forEach>
 		</table>
-		<div class="container">
+		<ul class="pagination pagination-sm">
 			<%
 				int pageNumber = (Integer) request.getAttribute("pageNumber");
 			int increase = 0;
 			for (int i = 1; i <= pageNumber; i++) {
 			%>
-			<ul class="pagination pagination-sm">
-				<li class="page-item "><a
-					href="paginationOfState?startPage=<%=increase%>&itemPerPage=5"
-					class="page-link"><%=i%></a></li>
-			</ul>
+			<li class="page-item "><a
+				href="paginationOfState?startPage=<%=increase%>&itemPerPage=5"
+				class="page-link"><%=i%></a></li>
 			<%
 				increase = increase + 6;
 			}
 			%>
-		</div>
+		</ul>
 		<a href="index.jsp" style="text-decoration: none;"><i
 			class="fas fa-home"></i></a>
 	</div>
