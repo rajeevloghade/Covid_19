@@ -4,13 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.covid</groupId>
 	<artifactId>COVID_19</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>COVID_19 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
 		<!--JSTL -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -74,6 +75,8 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+
 	</dependencies>
 	<build>
 		<finalName>COVID_19</finalName>

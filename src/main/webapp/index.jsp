@@ -1,8 +1,8 @@
 <!------- Navigation Bar -------->
 <%@include file="User/NavigationBar.jsp"%>
-<%@page import="org.hibernate.internal.build.AllowSysOut"%>
+<%@page import="org.hibernate.internal.build.*"%>
 <%@page isELIgnored="false"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstl"%>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
