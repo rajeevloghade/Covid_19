@@ -1,0 +1,35 @@
+CREATE TABLE State (
+  stateid_pk varchar(255) NOT NULL,
+  death int NOT NULL,
+  recovery int NOT NULL,
+  stateName varchar(255) DEFAULT NULL,
+  totalActiveCase int NOT NULL,
+  totalCase int NOT NULL,
+  PRIMARY KEY (stateid_pk)
+) 
+
+ CREATE TABLE district (
+  districtid_pk varchar(255) NOT NULL,
+  death int NOT NULL,
+  districtName varchar(255) DEFAULT NULL,
+  recovery int NOT NULL,
+  totalActiveCase int NOT NULL,
+  totalCase int NOT NULL,
+  stateid_fk varchar(255) DEFAULT NULL,
+  PRIMARY KEY (districtid_pk),
+  CONSTRAINT FK7rsowa3lmxd2m2sw4lm6by8f8 FOREIGN KEY (stateid_fk) REFERENCES state (stateid_pk) ON UPDATE CASCADE
+) ;
+
+CREATE TABLE city (
+  cityid_pk varchar(255) NOT NULL,
+  cityName varchar(255) DEFAULT NULL,
+  death int NOT NULL,
+  recovery int NOT NULL,
+  totalActiveCase int NOT NULL,
+  totalCase int NOT NULL,
+  districtid_fk varchar(255) DEFAULT NULL,
+  stateid_fk varchar(255) DEFAULT NULL,
+  PRIMARY KEY (cityid_pk),
+  CONSTRAINT FKbu7y3y9caxxgi374ny10eakvu FOREIGN KEY (districtid_fk) REFERENCES district (districtid_pk),
+  CONSTRAINT FKempftqgbwkin0sgxt0ix3f5sl FOREIGN KEY (stateid_fk) REFERENCES state (stateid_pk) ON UPDATE CASCADE
+) ;
